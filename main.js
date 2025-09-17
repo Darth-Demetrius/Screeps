@@ -26,19 +26,4 @@ module.exports.loop = function () {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'worker') roleWorker.run(creep);
     }
-
-    var tower = Game.getObjectById('4c99c09e66fcd5807c5b6de5');
-    if(tower) {
-        var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-            filter: (structure) => structure.hits < structure.hitsMax
-        });
-        if(closestDamagedStructure) {
-            tower.repair(closestDamagedStructure);
-        }
-
-        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(closestHostile) {
-            tower.attack(closestHostile);
-        }
-    }
 }
