@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var roleCollector = require('role.collector');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
